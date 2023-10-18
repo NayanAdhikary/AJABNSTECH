@@ -58,6 +58,7 @@ Table OF Contents
 body {
   font-family: 'Montserrat';
   font-weight: 400;
+  background-color: #333 !important;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -456,12 +457,11 @@ textarea.input {
 #top-header {
   padding-top: 10px;
   padding-bottom: 10px;
-  background-color: #1E1F29;
+  /* background-color: #1E1F29; */
 }
 
 .header-links li {
   display: inline-block;
-  margin-right: 15px;
   font-size: 12px;
 }
 
@@ -520,6 +520,8 @@ textarea.input {
 .header-search form .input {
   width: calc(100% - 260px);
   margin-right: -4px;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
 }
 
 .header-search form .search-btn {
@@ -669,8 +671,13 @@ background: linear-gradient(to bottom, #0083B0, #00B4DB); /* W3C, IE 10+/ Edge, 
 
 #navigation {
   background: #FFF;
-  border-bottom: 2px solid #E4E7ED;
-  border-top: 3px solid #D10024;
+  text-align: center;
+}
+
+#navigation .container-fluid{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 /*----------------------------*\
@@ -678,7 +685,7 @@ background: linear-gradient(to bottom, #0083B0, #00B4DB); /* W3C, IE 10+/ Edge, 
 \*----------------------------*/
 
 .main-nav>li+li {
-  margin-left: 30px
+  margin-left: 30px;
 }
 
 .main-nav>li>a {
@@ -757,6 +764,7 @@ background: linear-gradient(to bottom, #0083B0, #00B4DB); /* W3C, IE 10+/ Edge, 
   .main-nav>li>a {
     padding: 15px;
     color: #FFF;
+    border: 2x solid red;
   }
 }
 

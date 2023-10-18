@@ -44,30 +44,15 @@ session_start();
 		  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 		<![endif]-->
     <style>
-        #navigation {
-          background: #FF4E50;  /* fallback for old browsers */
-            background: -webkit-linear-gradient(to right, #F9D423, #FF4E50);  /* Chrome 10-25, Safari 5.1-6 */
-            background: linear-gradient(to right, #F9D423, #FF4E50); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+       
 
           
-        }
+        
         #header {
   
-            background: #780206;  /* fallback for old browsers */
-            background: -webkit-linear-gradient(to right, #061161, #780206);  /* Chrome 10-25, Safari 5.1-6 */
-            background: linear-gradient(to right, #061161, #780206); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
-  
+            background: #000;  /* fallback for old browsers */
         }
-        #top-header {
-              
-  
-            background: #870000;  /* fallback for old browsers */
-            background: -webkit-linear-gradient(to right, #190A05, #870000);  /* Chrome 10-25, Safari 5.1-6 */
-            background: linear-gradient(to right, #190A05, #870000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
-
-        }
+        
         #footer {
             background: #7474BF;  /* fallback for old browsers */
             background: -webkit-linear-gradient(to right, #348AC7, #7474BF);  /* Chrome 10-25, Safari 5.1-6 */
@@ -134,9 +119,84 @@ session_start();
 	<body>
 		<!-- HEADER -->
 		<header>
-			<!-- TOP HEADER -->
-			<div id="top-header">
+			
+			
+			
+
+			<!-- MAIN HEADER -->
+			<div id="header">
+				<!-- container -->
 				<div class="container">
+					<!-- row -->
+					<div class="row">
+						<!-- LOGO -->
+						<div class="col-md-3">
+							<div class="header-logo">
+								<a href="index.php" class="logo">
+								<p>
+                                    AJABNS TECH
+								</p>
+									
+								</a>
+							</div>
+						</div>
+						<!-- /LOGO -->
+
+						<!-- SEARCH BAR -->
+						<div class="col-md-6">
+							<div class="header-search">
+								<form>
+									<!-- <select class="input-select">
+										<option value="0">All Categories</option>
+										<option value="5">Laptop</option>
+										<option value="2">Computer</option>
+										<option value="3">Accessories</option>
+										<option value="4">HeadPhones</option>
+										<option value="1">Electronics</option>
+									</select> -->
+									<input class="input" id="search" type="text" placeholder="Search here">
+									<button type="submit" id="search_btn" class="search-btn">Search</button>
+								</form>
+							</div>
+						</div>
+						<!-- /SEARCH BAR -->
+						
+			
+
+						<!-- ACCOUNT -->
+						<div class="right-side d-flex align-item-center justify-content-between">
+
+						
+						<div class="col-md-3 clearfix">
+							<div class="header-ctn">
+								
+
+								<!-- Cart -->
+								<div class="dropdown">
+									<a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+										<i class="fa fa-shopping-cart"></i>
+										<span>Your Cart</span>
+										<div class="badge qty">0</div>
+									</a>
+									<div class="cart-dropdown"  >
+										<div class="cart-list" id="cart_product">
+										
+											
+										</div>
+										
+										<div class="cart-btns">
+												<a href="cart.php" style="width:100%;"><i class="fa fa-edit"></i>  edit cart</a>
+											
+										</div>
+									</div>
+										
+									</div>
+								<!-- /Cart -->
+
+											<!-- TOP HEADER -->
+						
+			<div id="top-header">
+				<!-- <div class="container"> -->
 					
 					<ul class="header-links pull-right">
 						<li><?php
@@ -173,77 +233,11 @@ session_start();
                                 </li>				
 					</ul>
 					
-				</div>
+				<!-- </div> -->
 			</div>
 			<!-- /TOP HEADER -->
-			
-			
 
-			<!-- MAIN HEADER -->
-			<div id="header">
-				<!-- container -->
-				<div class="container">
-					<!-- row -->
-					<div class="row">
-						<!-- LOGO -->
-						<div class="col-md-3">
-							<div class="header-logo">
-								<a href="index.php" class="logo">
-								<p>
-                                    AJABNS TECH
-								</p>
-									
-								</a>
-							</div>
 						</div>
-						<!-- /LOGO -->
-
-						<!-- SEARCH BAR -->
-						<div class="col-md-6">
-							<div class="header-search">
-								<form>
-									<select class="input-select">
-										<option value="0">All Categories</option>
-										<option value="1">Laptop</option>
-										<option value="1">Computer</option>
-										<option value="1">Accessories</option>
-										<option value="1">HeadPhones</option>
-										<option value="1">Electronics</option>
-									</select>
-									<input class="input" id="search" type="text" placeholder="Search here">
-									<button type="submit" id="search_btn" class="search-btn">Search</button>
-								</form>
-							</div>
-						</div>
-						<!-- /SEARCH BAR -->
-
-						<!-- ACCOUNT -->
-						<div class="col-md-3 clearfix">
-							<div class="header-ctn">
-								
-
-								<!-- Cart -->
-								<div class="dropdown">
-									<a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
-										<i class="fa fa-shopping-cart"></i>
-										<span>Your Cart</span>
-										<div class="badge qty">0</div>
-									</a>
-									<div class="cart-dropdown"  >
-										<div class="cart-list" id="cart_product">
-										
-											
-										</div>
-										
-										<div class="cart-btns">
-												<a href="cart.php" style="width:100%;"><i class="fa fa-edit"></i>  edit cart</a>
-											
-										</div>
-									</div>
-										
-									</div>
-								<!-- /Cart -->
-
 								<!-- Menu Toogle -->
 								<div class="menu-toggle">
 									<a href="#">
@@ -265,7 +259,7 @@ session_start();
 		<!-- /HEADER -->
 		<nav id='navigation'>
 			<!-- container -->
-            <div class="container" id="get_category_home">
+            <div class="container-fluid" id="get_category_home">
                 
             </div>
 				<!-- responsive-nav -->
