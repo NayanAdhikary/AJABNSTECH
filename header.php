@@ -109,9 +109,25 @@ session_start();
         content:"\f054"
     }
         
+	.header-logo p{
+		color: white;
+		padding-top: 10px;
+		font-size: 30px;
+	}
 
-       
-        
+	.col-md-6{
+		padding-left: 50px;
+	}
+
+	.dropdown{
+		padding-right: 100px;
+		cursor: pointer; 
+	}
+	
+    .menu-toggle{
+		
+	}
+
         </style>
 
     </head>
@@ -172,9 +188,9 @@ session_start();
 						<!-- LOGO -->
 						<div class="col-md-3">
 							<div class="header-logo">
-								<a href="#" class="logo">
-								<p style="font-style:normal; font-size: 33px;color: aliceblue;font-family: serif">
-                                        AJABNS TECH
+								<a href="index.php" class="logo">
+								<p>
+                                    AJABNS TECH
 								</p>
 									
 								</a>
