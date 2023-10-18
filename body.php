@@ -79,7 +79,7 @@
 							</div>
 							<div class="shop-body">
 								<h3>Accessories<br>Collection</h3>
-								<a href="product.php?p=72" class="cta-btn">Shop now <i class="fa fa-arrow-circle-right"></i></a>
+								<a href="product.php?p=72" class="cta-btn">Shop now<i class="fa fa-arrow-circle-right"></i></a>
 							</div>
 						</div></a>
 					</div>
