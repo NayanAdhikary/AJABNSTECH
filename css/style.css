@@ -548,9 +548,9 @@ background: linear-gradient(to bottom, #0083B0, #00B4DB); /* W3C, IE 10+/ Edge, 
   padding: 15px 0px;
 }
 
-.header-ctn>div {
+/* .header-ctn>div {
   display: inline-block;
-}
+} */
 
 .header-ctn>div+div {
   margin-left: 15px;
@@ -725,7 +725,7 @@ background: linear-gradient(to bottom, #0083B0, #00B4DB); /* W3C, IE 10+/ Edge, 
 
 @media only screen and (max-width: 991px) {
   .header-ctn .menu-toggle {
-    display: inline-block;
+    display: block;
   }
   #responsive-nav {
     position: fixed;
