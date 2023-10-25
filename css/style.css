@@ -2090,6 +2090,10 @@ background: linear-gradient(to bottom, #0083B0, #00B4DB); /* W3C, IE 10+/ Edge, 
   color: #B9BABC;
 }
 
+#footer .footer-payments i{
+  color: white !important;
+}
+
 #bottom-footer {
   background: #1E1F29;
 }

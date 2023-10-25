@@ -275,7 +275,7 @@
 				<div class="row">
 
 					<!-- section title -->
-					<div class="col-md-12">
+					<!-- <div class="col-md-12">
 						<div class="section-title">
 							<h3 class="title">Top selling</h3>
 							<div class="section-nav">
@@ -287,15 +287,15 @@
 								</ul>
 							</div>
 						</div>
-					</div>
+					</div> -->
 					<!-- /section title -->
 
 					<!-- Products tab & slick -->
-					<div class="col-md-12 mainn mainn-raised">
+					<!-- <div class="col-md-12 mainn mainn-raised">
 						<div class="row">
 							<div class="products-tabs">
-								<!-- tab -->
-								<div id="tab2" class="tab-pane fade in active">
+								<!-- tab 
+								<div id="tab2" class="tab-pane fade in active"> -->
 									<div class="products-slick" data-nav="#slick-nav-2">
 										<!-- product -->
 										<?php
