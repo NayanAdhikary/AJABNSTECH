@@ -69,7 +69,7 @@ session_start();
 
         }
         .footer-links li a {
-          color: #1E1F29;
+          color: white;
         }
         .mainn-raised {
             
