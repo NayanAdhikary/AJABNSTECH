@@ -2880,7 +2880,8 @@ a[data-toggle="collapse"][aria-expanded="true"] .caret,
 }
 
 .navbar.navbar-transparent {
-  background: transparent !important;
+  background: white !important;
+  color: black !important;
 }
 
 .navbar.bg-white .navbar-nav .search-bar.input-group i {
@@ -2939,7 +2940,7 @@ a[data-toggle="collapse"][aria-expanded="true"] .caret,
 
 .navbar .navbar-brand {
   position: fixed;
-  color: #FFFFFF;
+  color: black !important;
   margin-left: 17px;
   margin-top: -15px;
   text-transform: uppercase;
@@ -4205,6 +4206,7 @@ table.tablesorter thead tr .headerSortDown {
 .main-panel .content {
   padding: 80px 30px 30px 280px;
   min-height: calc(100vh - 70px);
+  background-color: black;
 }
 
 .main-panel .navbar-minimize button {
@@ -5546,7 +5548,7 @@ table.tablesorter thead tr .headerSortDown {
 
 @media screen and (min-width: 992px) {
   .navbar-collapse {
-    background: none !important;
+    background: white !important;
   }
   .navbar .navbar-toggle {
     display: none;
