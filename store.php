@@ -1,6 +1,7 @@
 <?php
 include 'header.php';
 ?>
+<link rel="stylesheet" href="style.css">
      <script id="jsbin-javascript">
 (function (global) {
 	if(typeof (global) === "undefined")

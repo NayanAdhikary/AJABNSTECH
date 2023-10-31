@@ -85,7 +85,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 a {
-  color: #2B2D42;
+  color: white !important;
   font-weight: 500;
   -webkit-transition: 0.2s color;
   transition: 0.2s color;
@@ -205,7 +205,7 @@ textarea.input {
   height: 40px;
   width: 100%;
   border: 1px solid #E4E7ED;
-  background-color: #FFF;
+  background-color: black;
   padding: 0px 35px 0px 15px;
 }
 
@@ -226,12 +226,14 @@ textarea.input {
 }
 
 .input-number .qty-up {
+  background-color: black !important;
   right: 0;
   top: 0;
   border-bottom: 0px;
 }
 
 .input-number .qty-down {
+  background-color: black !important;
   right: 0;
   bottom: 0;
 }
@@ -245,7 +247,7 @@ textarea.input {
 
 .input-select {
   padding: 0px 15px;
-  background: #FFF;
+  background: #000000;
   border: 1px solid #E4E7ED;
   height: 40px;
 }
@@ -540,6 +542,7 @@ textarea.input {
   margin-right: -4px;
   border-top-left-radius: 20px;
   border-bottom-left-radius: 20px;
+  margin-left: 70px;
 }
 
 .header-search form .search-btn {
@@ -583,6 +586,7 @@ background: linear-gradient(to bottom, #0083B0, #00B4DB); /* W3C, IE 10+/ Edge, 
 }
 
 .header-ctn>div>a>i {
+  color: white;
   display: block;
   font-size: 18px;
 }
@@ -707,6 +711,7 @@ background: linear-gradient(to bottom, #0083B0, #00B4DB); /* W3C, IE 10+/ Edge, 
 }
 
 .main-nav>li>a {
+  color: black !important;
   padding: 20px 0px;
 }
 
@@ -1433,6 +1438,8 @@ background: linear-gradient(to bottom, #f64f59, #c471ed, #12c2e9); /* W3C, IE 10
 
 .store-grid li a {
   display: block;
+  border: #D10024;
+  background-color: #D10024;
 }
 
 /*-- Store Pagination --*/
@@ -1471,6 +1478,7 @@ background: linear-gradient(to bottom, #f64f59, #c471ed, #12c2e9); /* W3C, IE 10
 }
 
 .store-pagination li a {
+  color: black !important;
   display: block;
 }
 
@@ -2095,6 +2103,7 @@ background: linear-gradient(to bottom, #0083B0, #00B4DB); /* W3C, IE 10+/ Edge, 
 
 .newsletter .newsletter-follow li a:hover, .newsletter .newsletter-follow li a:focus {
   background-color: #E4E7ED;
+  color: black;
   color: #D10024;
   border-radius: 20px;
 }
