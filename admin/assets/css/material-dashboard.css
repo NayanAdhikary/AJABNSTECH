@@ -19575,8 +19575,10 @@ Copyright (c) 2015 Daniel Eden
 }
 
 .dark-edition .sidebar .logo .simple-text {
-  color: #a9afbbd1;
+  color: white !important;
   font-weight: 300;
+  background-color: black !important;
+  font-family: 'montestar' !important;
 }
 
 .dark-edition .sidebar .logo:after {

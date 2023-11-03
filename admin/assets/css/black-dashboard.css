@@ -2880,8 +2880,8 @@ a[data-toggle="collapse"][aria-expanded="true"] .caret,
 }
 
 .navbar.navbar-transparent {
-  background: white !important;
-  color: black !important;
+  background: Black !important;
+  color: white !important;
 }
 
 .navbar.bg-white .navbar-nav .search-bar.input-group i {
@@ -2940,7 +2940,7 @@ a[data-toggle="collapse"][aria-expanded="true"] .caret,
 
 .navbar .navbar-brand {
   position: fixed;
-  color: black !important;
+  color: white !important;
   margin-left: 17px;
   margin-top: -15px;
   text-transform: uppercase;
@@ -3937,6 +3937,7 @@ table.tablesorter thead tr .headerSortDown {
   z-index: 4;
   position: relative;
   overflow: auto;
+  background-color: black !important;
 }
 
 .sidebar .sidebar-wrapper .dropdown .dropdown-backdrop,
@@ -3978,6 +3979,7 @@ table.tablesorter thead tr .headerSortDown {
 .off-canvas-sidebar .nav {
   margin-top: 20px;
   display: block;
+  background-color: black !important;
 }
 
 .sidebar .nav .caret,
@@ -4094,6 +4096,7 @@ table.tablesorter thead tr .headerSortDown {
   position: relative;
   padding: 0.5rem 0.7rem;
   z-index: 4;
+  background-color: black !important;
 }
 
 .sidebar .logo a.logo-mini,
@@ -4206,7 +4209,7 @@ table.tablesorter thead tr .headerSortDown {
 .main-panel .content {
   padding: 80px 30px 30px 280px;
   min-height: calc(100vh - 70px);
-  background-color: black;
+  background-color: #4f4e4e;
 }
 
 .main-panel .navbar-minimize button {
@@ -4729,7 +4732,8 @@ table.tablesorter thead tr .headerSortDown {
 }
 
 .card .card-header .card-title {
-  color: #FFFFFF;
+  color: white !important;
+  background-color: purple !important;
   font-weight: 100;
 }
 
@@ -5548,7 +5552,7 @@ table.tablesorter thead tr .headerSortDown {
 
 @media screen and (min-width: 992px) {
   .navbar-collapse {
-    background: white !important;
+    background: black !important;
   }
   .navbar .navbar-toggle {
     display: none;

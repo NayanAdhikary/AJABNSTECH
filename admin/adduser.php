@@ -27,7 +27,7 @@ mysqli_close($con);
           <!-- your content here -->
           <div class="col-md-12">
               <div class="card">
-                <div class="card-header card-header-primary">
+                <div style="background-color: black;" class=".dark-edition .card .card-header-primary .card-icon, .dark-edition .card .card-header-primary .card-text, .dark-edition .card .card-header-primary:not(.card-header-icon):not(.card-header-text), .dark-edition .card.bg-primary, .dark-edition .card.card-rotate.bg-primary .front, .dark-edition .card.card-rotate.bg-primary .back">
                   <h4 class="card-title">Add Users</h4>
                   <p class="card-category">Complete User profile</p>
                 </div>
