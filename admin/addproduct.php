@@ -97,7 +97,7 @@ include "topheader.php";
                     <div class="col-md-12">
                       <div class="form-group">
                         <label>Product Category</label>
-                        <input type="number" id="product_type" name="product_type" required="[1-6]" class="form-control">
+                        <input type="number" id="product_type" name="product_type" required="[1-7]" class="form-control">
                       </div>
                     </div>
                     <div class="col-md-12">
