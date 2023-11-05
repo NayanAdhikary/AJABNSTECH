@@ -80,48 +80,48 @@ session_start();
         }
        
         .glyphicon{
-    display: inline-block;
-    font: normal normal normal 14px/1 FontAwesome;
-    font-size: inherit;
-    text-rendering: auto;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    }
-    .glyphicon-chevron-left:before{
-        content:"\f053"
-    }
-    .glyphicon-chevron-right:before{
-        content:"\f054"
-    }
-        
-	.header-logo p{
-		color: white;
-		padding-top: 10px;
-		font-size: 30px;
-	}
+			display: inline-block;
+			font: normal normal normal 14px/1 FontAwesome;
+			font-size: inherit;
+			text-rendering: auto;
+			-webkit-font-smoothing: antialiased;
+			-moz-osx-font-smoothing: grayscale;
+			}
+			.glyphicon-chevron-left:before{
+				content:"\f053"
+			}
+			.glyphicon-chevron-right:before{
+				content:"\f054"
+			}
+				
+			.header-logo p{
+				color: white;
+				padding-top: 10px;
+				font-size: 30px;
+			}
 
-	.col-md-6{
-		padding-left: 50px;
-	}
+			.col-md-6{
+				padding-left: 50px;
+			}
 
-	.dropdown{
-		padding-right: 0px;
-		cursor: pointer; 
-	}
-	
-    .right-side{
-		display: flex !important;
-		align-items: center !important;
-		justify-content: space-between !important;
-	}
-	.menu-toggle{
-		display: none !important;
-	}
-	@media (max-width:991px) {
-		.menu-toggle{
-			display: block !important;
-		}
-	}
+			.dropdown{
+				padding-right: 0px;
+				cursor: pointer; 
+			}
+			
+			.right-side{
+				display: flex !important;
+				align-items: center !important;
+				justify-content: space-between !important;
+			}
+			.menu-toggle{
+				display: none !important;
+			}
+			@media (max-width:991px) {
+				.menu-toggle{
+					display: block !important;
+				}
+			}
 
         </style>
 
