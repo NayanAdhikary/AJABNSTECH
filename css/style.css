@@ -1752,7 +1752,7 @@ background: linear-gradient(to bottom, #f64f59, #c471ed, #12c2e9); /* W3C, IE 10
 #product-tab .tab-nav li a {
   display: block;
   font-weight: 700;
-  color: #8D99AE;
+  color: black !important;
 }
 
 #product-tab .tab-nav li.active a {
@@ -2407,7 +2407,7 @@ background: linear-gradient(to bottom, #0083B0, #00B4DB); /* W3C, IE 10+/ Edge, 
 }
 .main {
 
-    background: #fff;
+    background: black;
     position: relative;
     z-index: 3;
 
