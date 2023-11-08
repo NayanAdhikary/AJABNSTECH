@@ -49,7 +49,7 @@ include "topheader.php";
             <div class="col-md-6">
             <div class="card ">
               <div class="card-header card-header-primary">
-                <h4 class="card-title"> Categories List</h4>
+                <h4> Categories List</h4>
               </div>
               <div class="card-body">
                 <div class="table-responsive ps">
@@ -82,7 +82,7 @@ include "topheader.php";
           <div class="col-md-6">
             <div class="card ">
               <div class="card-header card-header-primary">
-                <h4 class="card-title">Brands List</h4>
+                <h4>Brands List</h4>
               </div>
               <div class="card-body">
                 <div class="table-responsive ps">
@@ -117,7 +117,7 @@ include "topheader.php";
            <div class="col-md-5">
             <div class="card ">
               <div class="card-header card-header-primary">
-                <h4 class="card-title">Subscribers</h4>
+                <h4>Subscribers</h4>
               </div>
               <div class="card-body">
                 <div class="table-responsive ps">
