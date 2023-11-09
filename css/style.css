@@ -1575,6 +1575,7 @@ background: linear-gradient(to bottom, #f64f59, #c471ed, #12c2e9); /* W3C, IE 10
 
 .product-details .product-name {
   text-transform: uppercase;
+  color: white !important;
   font-size: 18px;
 }
 
