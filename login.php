@@ -51,19 +51,21 @@ if(isset($_POST["email"]) && isset($_POST["password"])){
 			}
 			//if user is login from page we will send login_success
 			echo "login_success";
-			$BackToMyPage = $_SERVER['HTTP_REFERER'];
-				if(!isset($BackToMyPage)) {
-					// header('Location: index.php');
-					// echo"<script type='text/javascript'>
+			echo "<script> location.href='index.php'; </script>";
+                    exit;
+			// $BackToMyPage = $_SERVER['HTTP_REFERER'];
+			// 	if(!isset($BackToMyPage)) {
+			// 		// header('Location: index.php');
+			// 		// echo"<script type='text/javascript'>
 					
-					// </script>";
-					header('Location: index.php');
-				} else {
-					header('Location: index.php'); // default page
-				} 
+			// 		// </script>";
+			// 		header('Location: index.php');
+			// 	} else {
+			// 		header('Location: index.php'); // default page
+			// 	} 
 				
 			
-            exit;
+            
 
 		}else{
                 $email = mysqli_real_escape_string($con,$_POST["email"]);
