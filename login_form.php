@@ -36,11 +36,11 @@ if (isset($_POST["login_user_with_product"])) {
                                     
                                     <div class="form-group">
                                        <label for="email">Email</label>
-                                        <input class="input input-borders" type="email" name="email" placeholder="Email" id="password" required>
+                                        <input class="input input-borders" type="email" name="email" placeholder="Email" id="Email" required>
                                     </div>
                                     
                                     <div class="form-group">
-                                       <label for="email">Password</label>
+                                       <label for="password">Password</label>
                                         <input class="input input-borders" type="password" name="password" placeholder="password" id="password" required>
                                     </div>
                                     

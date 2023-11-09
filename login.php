@@ -53,10 +53,11 @@ if(isset($_POST["email"]) && isset($_POST["password"])){
 			echo "login_success";
 			$BackToMyPage = $_SERVER['HTTP_REFERER'];
 				if(!isset($BackToMyPage)) {
-					header('Location: '.$BackToMyPage);
-					echo"<script type='text/javascript'>
+					// header('Location: index.php');
+					// echo"<script type='text/javascript'>
 					
-					</script>";
+					// </script>";
+					header('Location: index.php');
 				} else {
 					header('Location: index.php'); // default page
 				} 
