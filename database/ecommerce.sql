@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.2
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 23, 2019 at 07:53 PM
--- Server version: 10.1.34-MariaDB
--- PHP Version: 7.2.7
+-- Generation Time: Nov 20, 2023 at 04:32 PM
+-- Server version: 10.4.28-MariaDB
+-- PHP Version: 8.0.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -19,14 +18,14 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `ecommerece`
+-- Database: `ecommerce`
 --
 
 DELIMITER $$
 --
 -- Procedures
 --
-CREATE DEFINER=`root`@`localhost` PROCEDURE `getcat` (IN `cid` INT)  SELECT * FROM categories WHERE cat_id=cid$$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `getcat` (IN `cid` INT)   SELECT * FROM categories WHERE cat_id=cid$$
 
 DELIMITER ;
 
@@ -41,7 +40,7 @@ CREATE TABLE `admin_info` (
   `admin_name` varchar(100) NOT NULL,
   `admin_email` varchar(300) NOT NULL,
   `admin_password` varchar(300) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `admin_info`
@@ -59,7 +58,7 @@ INSERT INTO `admin_info` (`admin_id`, `admin_name`, `admin_email`, `admin_passwo
 CREATE TABLE `brands` (
   `brand_id` int(100) NOT NULL,
   `brand_title` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `brands`
@@ -71,7 +70,15 @@ INSERT INTO `brands` (`brand_id`, `brand_title`) VALUES
 (3, 'Apple'),
 (4, 'motorolla'),
 (5, 'LG'),
-(6, 'Cloth Brand');
+(7, 'Intel'),
+(8, 'Red Gear'),
+(9, 'MSI'),
+(10, 'Asus'),
+(11, 'Acer'),
+(12, 'HP'),
+(13, 'Lenovo'),
+(14, 'Dell'),
+(15, 'Razer');
 
 -- --------------------------------------------------------
 
@@ -85,7 +92,7 @@ CREATE TABLE `cart` (
   `ip_add` varchar(250) NOT NULL,
   `user_id` int(10) DEFAULT NULL,
   `qty` int(10) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `cart`
@@ -101,14 +108,13 @@ INSERT INTO `cart` (`id`, `p_id`, `ip_add`, `user_id`, `qty`) VALUES
 (48, 72, '::1', 3, 0),
 (49, 60, '::1', 8, 1),
 (50, 61, '::1', 8, 1),
-(51, 1, '::1', 8, 1),
 (52, 5, '::1', 9, 1),
 (53, 2, '::1', 14, 1),
 (54, 3, '::1', 14, 1),
 (55, 5, '::1', 14, 1),
-(56, 1, '::1', 9, 1),
 (57, 2, '::1', 9, 1),
-(71, 61, '127.0.0.1', -1, 1);
+(71, 61, '127.0.0.1', -1, 1),
+(150, 73, '::1', 26, 1);
 
 -- --------------------------------------------------------
 
@@ -119,20 +125,16 @@ INSERT INTO `cart` (`id`, `p_id`, `ip_add`, `user_id`, `qty`) VALUES
 CREATE TABLE `categories` (
   `cat_id` int(100) NOT NULL,
   `cat_title` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `categories`
 --
 
 INSERT INTO `categories` (`cat_id`, `cat_title`) VALUES
-(1, 'Electronics'),
-(2, 'Ladies Wears'),
-(3, 'Mens Wear'),
-(4, 'Kids Wear'),
-(5, 'Furnitures'),
-(6, 'Home Appliances'),
-(7, 'Electronics Gadgets');
+(1, 'Computers'),
+(5, 'Laptops'),
+(7, 'Accessories');
 
 -- --------------------------------------------------------
 
@@ -143,7 +145,7 @@ INSERT INTO `categories` (`cat_id`, `cat_title`) VALUES
 CREATE TABLE `email_info` (
   `email_id` int(100) NOT NULL,
   `email` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `email_info`
@@ -165,7 +167,7 @@ CREATE TABLE `logs` (
   `user_id` varchar(50) NOT NULL,
   `action` varchar(50) NOT NULL,
   `date` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 -- --------------------------------------------------------
 
@@ -180,14 +182,13 @@ CREATE TABLE `orders` (
   `qty` int(11) NOT NULL,
   `trx_id` varchar(255) NOT NULL,
   `p_status` varchar(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `orders`
 --
 
 INSERT INTO `orders` (`order_id`, `user_id`, `product_id`, `qty`, `trx_id`, `p_status`) VALUES
-(1, 12, 7, 1, '07M47684BS5725041', 'Completed'),
 (2, 14, 2, 1, '07M47684BS5725041', 'Completed');
 
 -- --------------------------------------------------------
@@ -211,14 +212,15 @@ CREATE TABLE `orders_info` (
   `prod_count` int(15) DEFAULT NULL,
   `total_amt` int(15) DEFAULT NULL,
   `cvv` int(5) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `orders_info`
 --
 
 INSERT INTO `orders_info` (`order_id`, `user_id`, `f_name`, `email`, `address`, `city`, `state`, `zip`, `cardname`, `cardnumber`, `expdate`, `prod_count`, `total_amt`, `cvv`) VALUES
-(1, 12, 'Puneeth', 'puneethreddy951@gmail.com', 'Bangalore, Kumbalagodu, Karnataka', 'Bangalore', 'Karnataka', 560074, 'pokjhgfcxc', '4321 2345 6788 7654', '12/90', 3, 77000, 1234);
+(1, 12, 'Puneeth', 'puneethreddy951@gmail.com', 'Bangalore, Kumbalagodu, Karnataka', 'Bangalore', 'Karnataka', 560074, 'pokjhgfcxc', '4321 2345 6788 7654', '12/90', 3, 77000, 1234),
+(2, 26, 'Nayan Adhikary', 'joydevadhikary468@gmail.com', 'lkahifff', 'kahshffsf', 'aeraf', 710125, 'Visa', '6464 1164 4511 6541', '11/25', 1, 5000, 140);
 
 -- --------------------------------------------------------
 
@@ -232,7 +234,7 @@ CREATE TABLE `order_products` (
   `product_id` int(11) NOT NULL,
   `qty` int(15) DEFAULT NULL,
   `amt` int(15) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `order_products`
@@ -241,7 +243,8 @@ CREATE TABLE `order_products` (
 INSERT INTO `order_products` (`order_pro_id`, `order_id`, `product_id`, `qty`, `amt`) VALUES
 (73, 1, 1, 1, 5000),
 (74, 1, 4, 2, 64000),
-(75, 1, 8, 1, 40000);
+(75, 1, 8, 1, 40000),
+(91, 2, 71, 1, 5000);
 
 -- --------------------------------------------------------
 
@@ -258,7 +261,7 @@ CREATE TABLE `products` (
   `product_desc` text NOT NULL,
   `product_image` text NOT NULL,
   `product_keywords` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `products`
@@ -274,57 +277,16 @@ INSERT INTO `products` (`product_id`, `product_cat`, `product_brand`, `product_t
 (7, 1, 1, 'Laptop Pavillion', 50000, 'Laptop Hp Pavillion', 'laptop_PNG5930.png', 'Laptop Hp Pavillion'),
 (8, 1, 4, 'Sony', 40000, 'Sony Mobile', '530201353846AM_635_sony_xperia_z.png', 'sony mobile'),
 (9, 1, 3, 'iPhone New', 12000, 'iphone', 'iphone-hd-png-iphone-apple-png-file-550.png', 'iphone apple mobile'),
-(10, 2, 6, 'Red Ladies dress', 1000, 'red dress for girls', 'red dress.jpg', 'red dress '),
-(11, 2, 6, 'Blue Heave dress', 1200, 'Blue dress', 'images.jpg', 'blue dress cloths'),
-(12, 2, 6, 'Ladies Casual Cloths', 1500, 'ladies casual summer two colors pleted', '7475-ladies-casual-dresses-summer-two-colors-pleated.jpg', 'girl dress cloths casual'),
-(13, 2, 6, 'SpringAutumnDress', 1200, 'girls dress', 'Spring-Autumn-Winter-Young-Ladies-Casual-Wool-Dress-Women-s-One-Piece-Dresse-Dating-Clothes-Medium.jpg_640x640.jpg', 'girl dress'),
-(14, 2, 6, 'Casual Dress', 1400, 'girl dress', 'download.jpg', 'ladies cloths girl'),
-(15, 2, 6, 'Formal Look', 1500, 'girl dress', 'shutterstock_203611819.jpg', 'ladies wears dress girl'),
-(16, 3, 6, 'Sweter for men', 600, '2012-Winter-Sweater-for-Men-for-better-outlook', '2012-Winter-Sweater-for-Men-for-better-outlook.jpg', 'black sweter cloth winter'),
-(17, 3, 6, 'Gents formal', 1000, 'gents formal look', 'gents-formal-250x250.jpg', 'gents wear cloths'),
-(19, 3, 6, 'Formal Coat', 3000, 'ad', 'images (1).jpg', 'coat blazer gents'),
-(20, 3, 6, 'Mens Sweeter', 1600, 'jg', 'Winter-fashion-men-burst-sweater.png', 'sweeter gents '),
-(21, 3, 6, 'T shirt', 800, 'ssds', 'IN-Mens-Apparel-Voodoo-Tiles-09._V333872612_.jpg', 'formal t shirt black'),
-(22, 4, 6, 'Yellow T shirt ', 1300, 'yello t shirt with pant', '1.0x0.jpg', 'kids yellow t shirt'),
-(23, 4, 6, 'Girls cloths', 1900, 'sadsf', 'GirlsClothing_Widgets.jpg', 'formal kids wear dress'),
-(24, 4, 6, 'Blue T shirt', 700, 'g', 'images.jpg', 'kids dress'),
-(25, 4, 6, 'Yellow girls dress', 750, 'as', 'images (3).jpg', 'yellow kids dress'),
-(27, 4, 6, 'Formal look', 690, 'sd', 'image28.jpg', 'formal kids dress'),
-(32, 5, 0, 'Book Shelf', 2500, 'book shelf', 'furniture-book-shelf-250x250.jpg', 'book shelf furniture'),
-(33, 6, 2, 'Refrigerator', 35000, 'Refrigerator', 'CT_WM_BTS-BTC-AppliancesHome_20150723.jpg', 'refrigerator samsung'),
 (34, 6, 4, 'Emergency Light', 1000, 'Emergency Light', 'emergency light.JPG', 'emergency light'),
-(35, 6, 0, 'Vaccum Cleaner', 6000, 'Vaccum Cleaner', 'images (2).jpg', 'Vaccum Cleaner'),
 (36, 6, 5, 'Iron', 1500, 'gj', 'iron.JPG', 'iron'),
 (37, 6, 5, 'LED TV', 20000, 'LED TV', 'images (4).jpg', 'led tv lg'),
 (38, 6, 4, 'Microwave Oven', 3500, 'Microwave Oven', 'images.jpg', 'Microwave Oven'),
 (39, 6, 5, 'Mixer Grinder', 2500, 'Mixer Grinder', 'singer-mixer-grinder-mg-46-medium_4bfa018096c25dec7ba0af40662856ef.jpg', 'Mixer Grinder'),
-(40, 2, 6, 'Formal girls dress', 3000, 'Formal girls dress', 'girl-walking.jpg', 'ladies'),
 (45, 1, 2, 'Samsung Galaxy Note 3', 10000, '0', 'samsung_galaxy_note3_note3neo.JPG', 'samsung galaxy Note 3 neo'),
 (46, 1, 2, 'Samsung Galaxy Note 3', 10000, '', 'samsung_galaxy_note3_note3neo.JPG', 'samsung galxaxy note 3 neo'),
 (47, 4, 6, 'Laptop', 650, 'nbk', 'product01.png', 'Dell Laptop'),
 (48, 1, 7, 'Headphones', 250, 'Headphones', 'product05.png', 'Headphones Sony'),
 (49, 1, 7, 'Headphones', 250, 'Headphones', 'product05.png', 'Headphones Sony'),
-(50, 3, 6, 'boys shirts', 350, 'shirts', 'pm1.JPG', 'suit boys shirts'),
-(51, 3, 6, 'boys shirts', 270, 'shirts', 'pm2.JPG', 'suit boys shirts'),
-(52, 3, 6, 'boys shirts', 453, 'shirts', 'pm3.JPG', 'suit boys shirts'),
-(53, 3, 6, 'boys shirts', 220, 'shirts', 'ms1.JPG', 'suit boys shirts'),
-(54, 3, 6, 'boys shirts', 290, 'shirts', 'ms2.JPG', 'suit boys shirts'),
-(55, 3, 6, 'boys shirts', 259, 'shirts', 'ms3.JPG', 'suit boys shirts'),
-(56, 3, 6, 'boys shirts', 299, 'shirts', 'pm7.JPG', 'suit boys shirts'),
-(57, 3, 6, 'boys shirts', 260, 'shirts', 'i3.JPG', 'suit boys shirts'),
-(58, 3, 6, 'boys shirts', 350, 'shirts', 'pm9.JPG', 'suit boys shirts'),
-(59, 3, 6, 'boys shirts', 855, 'shirts', 'a2.JPG', 'suit boys shirts'),
-(60, 3, 6, 'boys shirts', 150, 'shirts', 'pm11.JPG', 'suit boys shirts'),
-(61, 3, 6, 'boys shirts', 215, 'shirts', 'pm12.JPG', 'suit boys shirts'),
-(62, 3, 6, 'boys shirts', 299, 'shirts', 'pm13.JPG', 'suit boys shirts'),
-(63, 3, 6, 'boys Jeans Pant', 550, 'Pants', 'pt1.JPG', 'boys Jeans Pant'),
-(64, 3, 6, 'boys Jeans Pant', 460, 'pants', 'pt2.JPG', 'boys Jeans Pant'),
-(65, 3, 6, 'boys Jeans Pant', 470, 'pants', 'pt3.JPG', 'boys Jeans Pant'),
-(66, 3, 6, 'boys Jeans Pant', 480, 'pants', 'pt4.JPG', 'boys Jeans Pant'),
-(67, 3, 6, 'boys Jeans Pant', 360, 'pants', 'pt5.JPG', 'boys Jeans Pant'),
-(68, 3, 6, 'boys Jeans Pant', 550, 'pants', 'pt6.JPG', 'boys Jeans Pant'),
-(69, 3, 6, 'boys Jeans Pant', 390, 'pants', 'pt7.JPG', 'boys Jeans Pant'),
-(70, 3, 6, 'boys Jeans Pant', 399, 'pants', 'pt8.JPG', 'boys Jeans Pant'),
 (71, 1, 2, 'Samsung galaxy s7', 5000, 'Samsung galaxy s7', 'product07.png', 'samsung mobile electronics'),
 (72, 7, 2, 'sony Headphones', 3500, 'sony Headphones', 'product02.png', 'sony Headphones electronics gadgets'),
 (73, 7, 2, 'samsung Headphones', 3500, 'samsung Headphones', 'product05.png', 'samsung Headphones electronics gadgets'),
@@ -334,8 +296,10 @@ INSERT INTO `products` (`product_id`, `product_cat`, `product_brand`, `product_t
 (77, 1, 4, 'MSV laptop 16gb ram NVIDEA Graphics', 5499, 'MSV laptop 16gb ram', 'product06.png', 'MSV laptop 16gb ram NVIDEA Graphics electronics'),
 (78, 1, 5, 'dell laptop 8gb ram intel integerated Graphics', 4579, 'dell laptop 8gb ram intel integerated Graphics', 'product08.png', 'dell laptop 8gb ram intel integerated Graphics electronics'),
 (79, 7, 2, 'camera with 3D pixels', 2569, 'camera with 3D pixels', 'product09.png', 'camera with 3D pixels camera electronics gadgets'),
-(80, 1, 1, 'ytrfdkjsd', 12343, 'sdfhgh', '1542455446_thythtf .jpeg', 'dfgh'),
-(81, 4, 6, 'Kids blue dress', 300, 'blue dress', '1543993724_pg4.jpg', 'kids blue dress');
+(83, 7, 7, 'Intel i 9 13th gen processor', 45, 'Here are some specifications for the Intel Core i9-13900K 13th generation processor: \r\nCores: 24 cores\r\nThreads: 32 threads\r\nP-Core Clock Speed: 3 GHz\r\nTurbo Boost Max Frequency: 5.7 GHz\r\nCache Memory: 36 MB\r\nSocket: LGA 1700\r\nMemory: Dual-Channel DDR5-5600 ECC\r\nGraphics: Integrated Intel UHD 770\r\nArchitecture: Hybrid Core\r\nPlatform: Windows 10\r\nThe i9-13900K also has: \r\n150W processor base power\r\n20 PCIe lanes (16 PCIe 5.0 and four PCIe 4.0 lanes)\r\n36 MB Intel Smart Cache\r\nUp to 26 billion transistors\r\nIntel Hyper-Threading technology', '1700472758_i9 processor.png', 'Intel i 9 13th gen processor'),
+(84, 5, 9, 'MSI Bravo 15 Ryzen 7 Octa Core 5800H - (16 GB/512 GB SSD/Windows 11 Home/4 GB Graphics/AMD Radeon RX6500M/144 Hz) Bravo 15 B5ED-035IN Gaming Laptop  (15.6 inch, Black, 2.35 Kg)', 85000, '\r\nExperience the power of MD Ryzen 5000 Mobile Processor with AMD Radeon RX 6500M Graphics card for immersive gaming. You can connect instantly to the gaming world with WiFi 6E. It has a high refresh rate to provide you with smooth visuals. The thermal solutions for CPU and GPU with CoolerBoost 3 enables you with uninterrupted gaming sessions. It has a wide range of ports so that you can connect multiple devices at the same time.', '1700475746_71+r5INyowS.jpg', 'MSI Bravo 15 Ryzen 7 Octa Core 5800H - (16 GB/512 GB SSD/Windows 11 Home/4 GB Graphics/AMD Radeon RX6500M/144 Hz) Bravo 15 B5ED-035IN Gaming Laptop  (15.6 inch, Black, 2.35 Kg)'),
+(85, 5, 10, 'ASUS ROG Strix G16 (2023), Intel Core i5 13th Gen 13450HX - (16 GB/1 TB SSD/Windows 11 Home/6 GB Graphics/NVIDIA GeForce RTX 3050) G614JJ-N3088WS Gaming Laptop  (16 Inch, Gray, 2.50 Kg, With MS Office)', 94990, 'Raise Your Game. Carry Your Squad.\r\nThe Strix G18 is ready to immerse you in the latest games like never before. Featuring a 13th Intel® Core™ HX processor, NVIDIA® GeForce RTX™ 40-Series GPU with a NVIDIA Advanced Optimus support.\r\n\r\n\r\nPerformance\r\nPowered by a 13th Gen Intel® HX-Series Processor and NVIDIA GeForce RTX 30-Series Laptop GPU boasting a max TGP of 140W with Dynamic Boost, be ready to dominate the competition in all of the latest games. Backed up with a dedicated MUX Switch and NVIDIA Advanced Optimus support, With PCIe Gen4x4 SSD storage and 4800 MHz of DDR5 RAM, large game libraries and intense multitasking sessions are a breeze for this gaming machine.', '1700476295_10ba85ac-574d-4e91-b759-97b749543a9c.__CR0,0,300,300_PT0_SX300_V1___.jpg', 'ASUS ROG Strix G16 (2023), Intel Core i5 13th Gen 13450HX - (16 GB/1 TB SSD/Windows 11 Home/6 GB Graphics/NVIDIA GeForce RTX 3050) G614JJ-N3088WS Gaming Laptop  (16 Inch, Gray, 2.50 Kg, With MS Office)'),
+(86, 5, 2, 'SAMSUNG Galaxy Book3 360 Intel EVO Core i5 13th Gen 1340P - (16 GB/512 GB SSD/Windows 11 Home) NP750QFG-KA2IN Thin and Light Laptop  (15.6 Inch, Graphite, 1.46 Kg, With MS Office)', 114990, 'Specifications\r\nGeneral\r\nSales Package\r\nLaptop, S-Pen, Adapter, Cable\r\nModel Number\r\nNP750QFG-KA2IN\r\nPart Number\r\nNP750QFG-KA2IN\r\nModel Name\r\nGalaxy Book3 360\r\nSeries\r\nGalaxy Book3 360 Intel EVO\r\nColor\r\nGraphite\r\nType\r\nThin and Light Laptop\r\nSuitable For\r\nProcessing & Multitasking\r\nMS Office Provided\r\nYes\r\nProcessor And Memory Features\r\nProcessor Brand\r\nIntel\r\nProcessor Name\r\nCore i5\r\nProcessor Generation\r\n13th Gen\r\nSSD\r\nYes\r\nSSD Capacity\r\n512 GB\r\nRAM\r\n16 GB\r\nRAM Type\r\nDDR4X\r\nProcessor Variant\r\n1340P\r\nClock Speed\r\nMax Turbo Frequency up to 4.6 GHz\r\nGraphic Processor\r\nIntel Integrated Iris Xe\r\nOperating System\r\nOperating System\r\nWindows 11 Home\r\nPort And Slot Features\r\nUSB Port\r\n1 x USB 3.2, 1 x USB Type - C, 1 x USB Type -C with Thunderbolt\r\nHDMI Port\r\n1 x HDMI\r\nDisplay And Audio Features\r\nTouchscreen\r\nYes\r\nScreen Size\r\n39.62 cm (15.6 Inch)\r\nScreen Resolution\r\n1920 x 1080 Pixel\r\nScreen Type\r\nSuper Amoled FHD display\r\nSpeakers\r\nYes\r\nInternal Mic\r\nYes\r\nConnectivity Features\r\nWireless LAN\r\nWiFi 6e\r\nBluetooth\r\nYes\r\nDimensions\r\nDimensions\r\n355.0 x 228.2 x 13.7 mm\r\nWeight\r\n1.46 Kg\r\nAdditional Features\r\nDisk Drive\r\nNot Available\r\nWeb Camera\r\n1080p\r\nFinger Print Sensor\r\nYes\r\nFace Recognition\r\nNo\r\nKeyboard\r\nFull Size Keyboard\r\nBacklit Keyboard\r\nYes\r\nWarranty\r\nWarranty Summary\r\n1 Year Onsite Warranty\r\nWarranty Service Type\r\nOnsite\r\nCovered in Warranty\r\nManufacturing Defects\r\nNot Covered in Warranty\r\nAccidental Damage, Wear & Tear', '1700488710_download.jpg', 'SAMSUNG Galaxy Book3 360 Intel EVO Core i5 13th Gen 1340P - (16 GB/512 GB SSD/Windows 11 Home) NP750QFG-KA2IN Thin and Light Laptop  (15.6 Inch, Graphite, 1.46 Kg, With MS Office)');
 
 -- --------------------------------------------------------
 
@@ -352,14 +316,14 @@ CREATE TABLE `user_info` (
   `mobile` varchar(10) NOT NULL,
   `address1` varchar(300) NOT NULL,
   `address2` varchar(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `user_info`
 --
 
 INSERT INTO `user_info` (`user_id`, `first_name`, `last_name`, `email`, `password`, `mobile`, `address1`, `address2`) VALUES
-(12, 'puneeth', 'Reddy', 'puneethreddy951@gmail.com', 'puneeth', '9448121558', '123456789', 'sdcjns,djc'),
+(12, 'puneeth', 'Pandey', 'puneethreddy951@gmail.com', 'puneeth', '9448121558', '123456789', 'sdcjns,djc'),
 (15, 'hemu', 'ajhgdg', 'puneethreddy951@gmail.com', '346778', '536487276', ',mdnbca', 'asdmhmhvbv'),
 (16, 'venky', 'vs', 'venkey@gmail.com', '1234534', '9877654334', 'snhdgvajfehyfygv', 'asdjbhfkeur'),
 (19, 'abhishek', 'bs', 'abhishekbs@gmail.com', 'asdcsdcc', '9871236534', 'bangalore', 'hassan'),
@@ -367,7 +331,9 @@ INSERT INTO `user_info` (`user_id`, `first_name`, `last_name`, `email`, `passwor
 (22, 'puneeth', 'v', 'hemu@gmail.com', '1234534', '9877654334', 'snhdgvajfehyfygv', 'asdjbhfkeur'),
 (23, 'hemanth', 'reddy', 'hemanth@gmail.com', 'Puneeth@123', '9876543234', 'Bangalore', 'Kumbalagodu'),
 (24, 'newuser', 'user', 'newuser@gmail.com', 'puneeth@123', '9535688928', 'Bangalore', 'Kumbalagodu'),
-(25, 'otheruser', 'user', 'otheruser@gmail.com', 'puneeth@123', '9535688928', 'Bangalore', 'Kumbalagodu');
+(25, 'otheruser', 'user', 'otheruser@gmail.com', 'puneeth@123', '9535688928', 'Bangalore', 'Kumbalagodu'),
+(26, 'Nayan', 'Adhikary', 'joydevadhikary468@gmail.com', 'joydevadhikary468@', '9330494579', 'lkahifff', 'kahshffsf'),
+(27, 'Asish', 'Das', 'kagsugugf@gmail.com', '1234567890', '9632145897', 'jaysgf', 'kasgfugffoa');
 
 --
 -- Triggers `user_info`
@@ -394,7 +360,7 @@ CREATE TABLE `user_info_backup` (
   `mobile` varchar(10) NOT NULL,
   `address1` varchar(300) NOT NULL,
   `address2` varchar(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `user_info_backup`
@@ -411,7 +377,9 @@ INSERT INTO `user_info_backup` (`user_id`, `first_name`, `last_name`, `email`, `
 (22, 'puneeth', 'v', 'hemu@gmail.com', '1234534', '9877654334', 'snhdgvajfehyfygv', 'asdjbhfkeur'),
 (23, 'hemanth', 'reddy', 'hemanth@gmail.com', 'Puneeth@123', '9876543234', 'Bangalore', 'Kumbalagodu'),
 (24, 'newuser', 'user', 'newuser@gmail.com', 'puneeth@123', '9535688928', 'Bangalore', 'Kumbalagodu'),
-(25, 'otheruser', 'user', 'otheruser@gmail.com', 'puneeth@123', '9535688928', 'Bangalore', 'Kumbalagodu');
+(25, 'otheruser', 'user', 'otheruser@gmail.com', 'puneeth@123', '9535688928', 'Bangalore', 'Kumbalagodu'),
+(26, 'Nayan', 'Adhikary', 'joydevadhikary468@gmail.com', 'joydevadhikary468@', '9330494579', 'lkahifff', 'kahshffsf'),
+(27, 'Asish', 'Das', 'kagsugugf@gmail.com', '1234567890', '9632145897', 'jaysgf', 'kasgfugffoa');
 
 --
 -- Indexes for dumped tables
@@ -506,19 +474,19 @@ ALTER TABLE `admin_info`
 -- AUTO_INCREMENT for table `brands`
 --
 ALTER TABLE `brands`
-  MODIFY `brand_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `brand_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=147;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=151;
 
 --
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `cat_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `cat_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `email_info`
@@ -548,25 +516,25 @@ ALTER TABLE `orders_info`
 -- AUTO_INCREMENT for table `order_products`
 --
 ALTER TABLE `order_products`
-  MODIFY `order_pro_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=91;
+  MODIFY `order_pro_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=92;
 
 --
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `product_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=82;
+  MODIFY `product_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=89;
 
 --
 -- AUTO_INCREMENT for table `user_info`
 --
 ALTER TABLE `user_info`
-  MODIFY `user_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `user_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT for table `user_info_backup`
 --
 ALTER TABLE `user_info_backup`
-  MODIFY `user_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `user_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- Constraints for dumped tables
