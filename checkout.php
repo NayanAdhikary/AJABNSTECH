@@ -15,7 +15,7 @@ include "header.php";
   -ms-flex-wrap: wrap; /* IE10 */
   flex-wrap: wrap;
   margin: 0 -16px;
-}
+}qty
 
 .col-25 {
   -ms-flex: 25%; /* IE10 */
