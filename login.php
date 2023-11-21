@@ -22,7 +22,7 @@ if(isset($_POST["email"]) && isset($_POST["password"])){
 	//if user record is available in database then $count will be equal to 1
 	if($count == 1){
 		   	
-			if (isset($_COOKIE["product_list"])) {
+			if (isset($_COOKIE["product_list"])){
 				$p_list = stripcslashes($_COOKIE["product_list"]);
 				//here we are decoding stored json product list cookie to normal array
 				$product_list = json_decode($p_list,true);

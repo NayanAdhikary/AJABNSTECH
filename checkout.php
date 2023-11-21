@@ -45,6 +45,10 @@ include "header.php";
   border-radius: 3px;
 }
 
+.bill{
+	color: black !important;
+}
+
 input[type=text] {
   width: 100%;
   margin-bottom: 20px;
@@ -59,6 +63,10 @@ label {
 }
 
 .col-50{
+	color: black !important;
+}
+
+.container-fluid{
 	color: black !important;
 }
 
@@ -184,7 +192,7 @@ span.price {
 					</div>
 					</div>
 					</div>
-					<label><input style="color:black!important;" type="CHECKBOX" name="q" class="roomselect" value="conform" required> Shipping address same as billing
+					<label><input class="bill" type="CHECKBOX" name="q" class="roomselect" value="conform" required> Shipping address same as billing
 					</label>';
 					$i=1;
 					$total=0;
@@ -239,7 +247,7 @@ span.price {
 					</span>
 				</h4>
 
-					<table style:'color:white;'; class='table table-condensed'>
+					<table class='table table-condensed cckout'>
 					<thead><tr>
 					<th >no</th>
 					<th >product title</th>
