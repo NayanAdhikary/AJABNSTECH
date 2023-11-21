@@ -58,6 +58,14 @@ label {
   display: block;
 }
 
+.col-50{
+	color: black !important;
+}
+
+.roomselect{
+	color: black !important;
+}
+
 .icon-container {
   margin-bottom: 20px;
   padding: 7px 0;
@@ -176,7 +184,7 @@ span.price {
 					</div>
 					</div>
 					</div>
-					<label><input type="CHECKBOX" name="q" class="roomselect" value="conform" required> Shipping address same as billing
+					<label><input style="color:black!important;" type="CHECKBOX" name="q" class="roomselect" value="conform" required> Shipping address same as billing
 					</label>';
 					$i=1;
 					$total=0;
@@ -231,7 +239,7 @@ span.price {
 					</span>
 				</h4>
 
-					<table class='table table-condensed'>
+					<table style:'color:white;'; class='table table-condensed'>
 					<thead><tr>
 					<th >no</th>
 					<th >product title</th>

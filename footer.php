@@ -36,9 +36,7 @@
 							<div class="footer">
 								<h3 class="footer-title" style="color: white !important;" >Categories</h3>
 								<ul class="footer-links">
-									<li><a href="#">Mobiles</a></li>
 									<li><a href="#">Laptop</a></li>
-									<li><a href="#">Computer</a></li>
 									<li><a href="#">Electronics</a></li>
 									<li><a href="#">Accessories</a></li>
 								</ul>
