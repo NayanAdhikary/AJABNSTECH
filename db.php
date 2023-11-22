@@ -1,4 +1,4 @@
-<?php
+<?php 
 
 // Create connection
 $con = mysqli_connect('localhost','root','','ecommerce') OR die(mysqli_connect());
