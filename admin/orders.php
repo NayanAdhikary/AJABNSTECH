@@ -17,7 +17,7 @@ $page=$_GET['page'];
 
 if($page=="" || $page=="1")
 {
-$page1=0;	
+$page1=0;
 }
 else
 {
